@@ -16,8 +16,6 @@ import {
 import {
     Icon24Filter,
 } from '@vkontakte/icons';
-import {Icon24MessageOutline} from '@vkontakte/icons';
-import Menu from "../Menu";
 
 const Layout = withPlatform(withAdaptivity(
     class Layout extends React.Component {
@@ -64,13 +62,7 @@ const Layout = withPlatform(withAdaptivity(
                                     <Title level="1" weight="medium"
                                            style={{marginBottom: 16}}>{this.props.title}</Title>
                                 </Div>
-                                <Search
-                                    value={this.state.search}
-                                    onChange={this.onChange}
-                                    icon={<Icon24Filter/>}
-                                    onIconClick={() => {
-                                    }}
-                                />
+                                {this.props.search}
                                 {this.props.children}
                             </Group>
                         </SplitCol>

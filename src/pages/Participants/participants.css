@@ -1,0 +1,31 @@
+.card_group__item .vkuiCard__in.Card__in {
+    display: flex;
+}
+
+.card_group__item--icon {
+    padding: 20px;
+    align-items: center;
+    display: flex;
+    flex: 0 0 25px;
+    justify-content: center;
+}
+
+.card_group__item--sub {
+    color: #99A2AD;
+    font-size: 14px;
+}
+.card_group__item--text {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    min-height: 72px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card_group__item--actions {
+    display: flex;
+    align-items: center;
+    padding: 22px;
+}

@@ -11,9 +11,8 @@ import {
     Route
 } from "react-router-dom";
 import Participants from "./pages/Participants/index";
-import Pupils from "./pages/Pupils";
-import Groups from "./pages/Groups";
 import Menu from './components/Menu';
+import Schedule from "./pages/Schedule/index";
 
 let App = ({viewWidth}) => {
     return (
@@ -26,11 +25,8 @@ let App = ({viewWidth}) => {
                                 <Route path="/participants">
                                     <Participants/>
                                 </Route>
-                                <Route path="/pupils">
-                                    <Pupils/>
-                                </Route>
-                                <Route path="/groups">
-                                    <Groups/>
+                                <Route path="/schedule">
+                                    <Schedule/>
                                 </Route>
                             </Switch>
                             <Menu />
