@@ -1,21 +1,30 @@
 import Layout from "../../components/Layout/Layout";
-import {Search} from "@vkontakte/vkui";
+import {Div, Search} from "@vkontakte/vkui";
 import {Icon24Filter} from "@vkontakte/icons";
 import React from "react";
+import CalendarItem from "../../components/CalendarItem";
+import CourseItem from "../../components/CourseItem/index";
 
 export default function Schedule() {
     const search = <Search
         value=""
         onChange={() => {}}
-        icon={<Icon24Filter/>}
+
         onIconClick={() => {
         }}
     />;
 
-    return <Layout title = "Личный кабинет" search = {search}>
-        <div className={"calendar-title"}>
-            <div className="calendar-title__main">20 апреля</div>
-            <div className="calendar-title__sub">Сегодня</div>
-        </div>
+    return <Layout title = "Мое расписание" search = {search}>
+        <Div>
+            <CalendarItem title="20 Апреля" subTitle="Сегодня">
+                <CourseItem />
+            </CalendarItem>
+            <CalendarItem title="21 Апреля" subTitle="Завтра">
+            </CalendarItem>
+            <CalendarItem title="22 Апреля" subTitle="Понедельник">
+                <CourseItem />
+
+            </CalendarItem>
+        </Div>
     </Layout>;
 }

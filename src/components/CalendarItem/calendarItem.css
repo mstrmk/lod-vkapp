@@ -1,0 +1,20 @@
+.calendar-title {
+    display: flex;
+    align-items: baseline;
+    padding: 13px 13px;
+
+}
+.calendar-title__main {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+    flex: 0 0 118px;
+}
+.calendar-title__sub {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+}
+.calendar-item {
+    margin-bottom: 20px;
+}

@@ -1,0 +1,35 @@
+.course-item .vkuiCard__in.Card__in {
+    padding: 19px 27px;
+    display: flex;
+}
+
+.course-item__text {
+    flex-grow: 1;
+}
+
+.course-item__date-time {
+    flex: 0 0 74px;
+}
+
+.course-item__date {
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.course-item__time {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+.course-item__sub {
+    font-size: 13px;
+    color: #818C99;
+    margin-bottom: 14px;
+}
+
+.course-item__title {
+    margin-top: 15px;
+    font-size: 20px;
+    font-weight: 400;
+}

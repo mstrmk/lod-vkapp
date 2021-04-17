@@ -20,7 +20,6 @@ const Participants = () => {
     const search = <Search
         value=""
         onChange={() => {}}
-        icon={<Icon24Filter/>}
         onIconClick={() => {
         }}
     />;

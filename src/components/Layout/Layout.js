@@ -39,35 +39,33 @@ const Layout = withPlatform(withAdaptivity(
             const isDesktop = this.props.viewWidth >= ViewWidth.SMALL_TABLET;
 
             return (
-                <>
-                    <SplitLayout
-                        style={{justifyContent: "center"}}
-                        header={hasHeader && <PanelHeader separator={false}/>}
+                <SplitLayout
+                    style={{justifyContent: "center"}}
+                    header={hasHeader && <PanelHeader separator={false}/>}
+                >
+                    <SplitCol
+                        animate={!isDesktop}
+                        spaced={isDesktop}
+                        width={isDesktop ? '560px' : '100%'}
+                        maxWidth={isDesktop ? '560px' : '100%'}
                     >
-                        <SplitCol
-                            animate={!isDesktop}
-                            spaced={isDesktop}
-                            width={isDesktop ? '560px' : '100%'}
-                            maxWidth={isDesktop ? '560px' : '100%'}
-                        >
-                            <PanelHeader left={<PanelHeaderBack/>}>
-                                <PanelHeaderContent>
-                                    Учитель
-                                </PanelHeaderContent>
-                            </PanelHeader>
-                            <Group>
-                                <Spacing size={16}/>
-                                <Spacing size={8}/>
-                                <Div style={{paddingBottom: '0'}}>
-                                    <Title level="1" weight="medium"
-                                           style={{marginBottom: 16}}>{this.props.title}</Title>
-                                </Div>
-                                {this.props.search}
-                                {this.props.children}
-                            </Group>
-                        </SplitCol>
-                    </SplitLayout>
-                </>
+                        <PanelHeader left={<PanelHeaderBack/>}>
+                            <PanelHeaderContent>
+                                Учитель
+                            </PanelHeaderContent>
+                        </PanelHeader>
+                        <Group>
+                            <Spacing size={16}/>
+                            <Spacing size={8}/>
+                            <Div style={{paddingBottom: '0'}}>
+                                <Title level="1" weight="medium"
+                                       style={{marginBottom: 16}}>{this.props.title}</Title>
+                            </Div>
+                            {this.props.search}
+                            {this.props.children}
+                        </Group>
+                    </SplitCol>
+                </SplitLayout>
             )
         }
     }, {viewWidth: true}));
