@@ -12,10 +12,9 @@ import {
     PanelHeader,
     Header,
     Group,
-    SimpleCell, withAdaptivity, TabbarItem, Counter, Badge, Tabbar
+    SimpleCell, withAdaptivity, TabbarItem, Counter, Badge, Tabbar, Epic, Platform
 } from "@vkontakte/vkui";
 import "@vkontakte/vkui/dist/vkui.css";
-import Layout from "./components/Layout/Layout";
 import {
     BrowserRouter as Router,
     Switch,
@@ -28,49 +27,33 @@ import Menu from './components/Menu';
 
 let App = ({viewWidth}) => {
 
+
     return (
-        <ConfigProvider>
+        <ConfigProvider platform = { Platform.IOS }>
             <AdaptivityProvider>
-                <AppRoot>
-                    <Router>
-                        <Switch>
-                            <Route path="/teacher">
-                                <Teacher/>
-                            </Route>
-                            <Route path="/pupils">
-                                <Pupils/>
-                            </Route>
-                            <Route path="/groups">
-                                <Groups/>
-                            </Route>
-                        </Switch>
-                        <Menu/>
-                    </Router>
-                </AppRoot>
+                <Epic>
+                    <AppRoot>
+                        <Router>
+                            <Switch>
+                                <Route path="/participants">
+                                    <Teacher/>
+                                </Route>
+                                <Route path="/teacher">
+                                    <Teacher/>
+                                </Route>
+                                <Route path="/pupils">
+                                    <Pupils/>
+                                </Route>
+                                <Route path="/groups">
+                                    <Groups/>
+                                </Route>
+                            </Switch>
+                            <Menu />
+                        </Router>
+                    </AppRoot>
+                </Epic>
             </AdaptivityProvider>
         </ConfigProvider>
-
-        // <ConfigProvider>
-        //
-        //     <AdaptivityProvider>
-        //         <AppRoot>
-        //             <Router>
-        //                 <Switch>
-        //                     <Route path="/teacher">
-        //                         <Teacher />
-        //                     </Route>
-        //                     <Route path="/pupils">
-        //                         <Pupils />
-        //                     </Route>
-        //                     <Route path="/groups">
-        //
-        //                         <Groups />
-        //                     </Route>
-        //                 </Switch>
-        //             </Router>
-        //         </AppRoot>
-        //     </AdaptivityProvider>
-        // </ConfigProvider>
     );
 };
 
