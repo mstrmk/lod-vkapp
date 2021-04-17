@@ -2,17 +2,7 @@ import React from "react";
 import {
     AdaptivityProvider,
     ConfigProvider,
-    useAdaptivity,
-    AppRoot,
-    SplitLayout,
-    SplitCol,
-    ViewWidth as vW,
-    View,
-    Panel,
-    PanelHeader,
-    Header,
-    Group,
-    SimpleCell, withAdaptivity, TabbarItem, Counter, Badge, Tabbar, Epic, Platform
+    AppRoot, Epic, Platform
 } from "@vkontakte/vkui";
 import "@vkontakte/vkui/dist/vkui.css";
 import {
@@ -20,14 +10,12 @@ import {
     Switch,
     Route
 } from "react-router-dom";
-import Teacher from "./pages/Teacher/index";
+import Participants from "./pages/Participants/index";
 import Pupils from "./pages/Pupils";
 import Groups from "./pages/Groups";
 import Menu from './components/Menu';
 
 let App = ({viewWidth}) => {
-
-
     return (
         <ConfigProvider platform = { Platform.IOS }>
             <AdaptivityProvider>
@@ -36,10 +24,7 @@ let App = ({viewWidth}) => {
                         <Router>
                             <Switch>
                                 <Route path="/participants">
-                                    <Teacher/>
-                                </Route>
-                                <Route path="/teacher">
-                                    <Teacher/>
+                                    <Participants/>
                                 </Route>
                                 <Route path="/pupils">
                                     <Pupils/>
@@ -49,6 +34,7 @@ let App = ({viewWidth}) => {
                                 </Route>
                             </Switch>
                             <Menu />
+
                         </Router>
                     </AppRoot>
                 </Epic>

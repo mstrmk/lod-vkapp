@@ -1,20 +1,22 @@
 import React from 'react';
 import {
     Badge,
-    Cell, Counter, Group,
+    Cell, Counter, Div, Group,
     List,
     Panel,
     PanelHeader,
     PanelHeaderBack,
-    PanelHeaderButton, PanelHeaderContent, PanelHeaderContext,
+    PanelHeaderButton, PanelHeaderContent, PanelHeaderContext, Search, Spacing,
     SplitCol,
-    SplitLayout, Tabbar, TabbarItem,
+    SplitLayout, Tabbar, TabbarItem, Title,
     View,
     ViewWidth,
     VKCOM, withAdaptivity, withPlatform
 } from "@vkontakte/vkui";
-import {Icon28ClipOutline, Icon28MessageOutline, Icon28NewsfeedOutline, Icon28Profile} from '@vkontakte/icons';
-import { Icon24MessageOutline } from '@vkontakte/icons';
+import {
+    Icon24Filter,
+} from '@vkontakte/icons';
+import {Icon24MessageOutline} from '@vkontakte/icons';
 import Menu from "../Menu";
 
 const Layout = withPlatform(withAdaptivity(
@@ -50,21 +52,29 @@ const Layout = withPlatform(withAdaptivity(
                             width={isDesktop ? '560px' : '100%'}
                             maxWidth={isDesktop ? '560px' : '100%'}
                         >
-                            <View activePanel="context2">
-                                <Panel id="context2">
-                                    <PanelHeader left={<PanelHeaderBack/>}>
-                                        <PanelHeaderContent>
-                                            {this.props.title}
-                                        </PanelHeaderContent>
-                                    </PanelHeader>
-                                    <Group>
-                                        {this.props.children}
-                                    </Group>
-                                </Panel>
-                            </View>
+                            <PanelHeader left={<PanelHeaderBack/>}>
+                                <PanelHeaderContent>
+                                    Учитель
+                                </PanelHeaderContent>
+                            </PanelHeader>
+                            <Group>
+                                <Spacing size={16}/>
+                                <Spacing size={8}/>
+                                <Div style={{paddingBottom: '0'}}>
+                                    <Title level="1" weight="medium"
+                                           style={{marginBottom: 16}}>{this.props.title}</Title>
+                                </Div>
+                                <Search
+                                    value={this.state.search}
+                                    onChange={this.onChange}
+                                    icon={<Icon24Filter/>}
+                                    onIconClick={() => {
+                                    }}
+                                />
+                                {this.props.children}
+                            </Group>
                         </SplitCol>
                     </SplitLayout>
-
                 </>
             )
         }

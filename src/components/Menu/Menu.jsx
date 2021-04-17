@@ -24,7 +24,7 @@ const menuConfig = [
 function Menu() {
     const location = useLocation();
     const history = useHistory();
-    const path = location.path;
+    const path = location.pathname;
 
     const checkSelected = (current) => {
         return path === current;
