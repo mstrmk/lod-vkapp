@@ -1,5 +1,6 @@
 import Layout from "../../components/Layout/Layout";
 import {
+    Avatar,
     Card,
     CardGrid, CellButton, Div,
     Header, HorizontalScroll, Panel,
@@ -45,18 +46,20 @@ const Participants = () => {
         <Spacing separator size={16} />
 
         {tab === 'all' && <Div>
-            <SimpleCell description="Утреннее занятие">12 февраля 10:00 - 12:00</SimpleCell>
-            <SimpleCell description="Утреннее занятие">12 февраля 10:00 - 12:00</SimpleCell>
-            <SimpleCell description="Утреннее занятие">12 февраля 10:00 - 12:00</SimpleCell>
+            <SimpleCell expandable before={<Avatar style={{objectFit: 'cover'}} src={'https://ichef.bbci.co.uk/news/640/cpsprodpb/16D6F/production/_117615539_gettyimages-1230688479.jpg'}/>}>Данил Даньшин</SimpleCell>
+            <SimpleCell expandable before={<Avatar style={{objectFit: 'cover'}} src={'https://ichef.bbci.co.uk/news/640/cpsprodpb/16D6F/production/_117615539_gettyimages-1230688479.jpg'}/>}>Данил Даньшин</SimpleCell>
+            <SimpleCell expandable before={<Avatar style={{objectFit: 'cover'}} src={'https://ichef.bbci.co.uk/news/640/cpsprodpb/16D6F/production/_117615539_gettyimages-1230688479.jpg'}/>}>Данил Даньшин</SimpleCell>
+            <SimpleCell expandable before={<Avatar style={{objectFit: 'cover'}} src={'https://ichef.bbci.co.uk/news/640/cpsprodpb/16D6F/production/_117615539_gettyimages-1230688479.jpg'}/>}>Данил Даньшин</SimpleCell>
+
         </Div>}
 
         {tab === 'parents' && <Div>
-            <SimpleCell description="Утреннее занятие">12 февраля 10:00 - 12:00</SimpleCell>
-            <SimpleCell description="Утреннее занятие">12 февраля 10:00 - 12:00</SimpleCell>
+            <SimpleCell expandable before={<Avatar style={{objectFit: 'cover'}} src={'https://ichef.bbci.co.uk/news/640/cpsprodpb/16D6F/production/_117615539_gettyimages-1230688479.jpg'}/>}>Данил Даньшин</SimpleCell>
+            <SimpleCell expandable before={<Avatar style={{objectFit: 'cover'}} src={'https://ichef.bbci.co.uk/news/640/cpsprodpb/16D6F/production/_117615539_gettyimages-1230688479.jpg'}/>}>Данил Даньшин</SimpleCell>
         </Div>}
 
         {tab === 'pupils' && <Div>
-            <SimpleCell description="Утреннее занятие">12 февраля 10:00 - 12:00</SimpleCell>
+            <SimpleCell expandable before={<Avatar style={{objectFit: 'cover'}} src={'https://ichef.bbci.co.uk/news/640/cpsprodpb/16D6F/production/_117615539_gettyimages-1230688479.jpg'}/>}>Данил Даньшин</SimpleCell>
         </Div>}
 
         {tab === 'groups' && <Div>
