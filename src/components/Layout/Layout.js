@@ -1,21 +1,16 @@
 import React from 'react';
 import {
-    Badge,
-    Cell, Counter, Div, Group,
-    List,
+    Div, Group,
     Panel,
     PanelHeader,
     PanelHeaderBack,
-    PanelHeaderButton, PanelHeaderContent, PanelHeaderContext, Search, Spacing,
+    PanelHeaderContent, Spacing,
     SplitCol,
-    SplitLayout, Tabbar, TabbarItem, Title,
+    SplitLayout, Title,
     View,
     ViewWidth,
     VKCOM, withAdaptivity, withPlatform
 } from "@vkontakte/vkui";
-import {
-    Icon24Filter,
-} from '@vkontakte/icons';
 import {withRouter} from 'react-router-dom';
 
 const Layout = withPlatform(withAdaptivity(

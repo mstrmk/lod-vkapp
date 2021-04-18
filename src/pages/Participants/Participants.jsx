@@ -2,14 +2,12 @@ import Layout from "../../components/Layout/Layout";
 import {
     Avatar,
     Card,
-    CardGrid, CardScroll, CellButton, ContentCard, Div, Group,
-    Header, Headline, HorizontalScroll, Panel, Search,
+    Div, Headline, HorizontalScroll, Search,
     SimpleCell,
-    Spacing, Tabs, TabsItem, View
+    Spacing, Tabs, TabsItem
 } from "@vkontakte/vkui";
 import React, {useState} from 'react';
 import './participants.css';
-import {Icon24Filter, Icon28AddOutline} from "@vkontakte/icons";
 import {Icon28EditOutline} from '@vkontakte/icons';
 import {Icon24DeleteOutlineAndroid} from '@vkontakte/icons';
 import {Icon24UsersOutline} from '@vkontakte/icons';

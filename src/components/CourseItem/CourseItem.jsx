@@ -4,16 +4,16 @@ import './course-item.css';
 import {Link} from "react-router-dom";
 
 
-function CourseItem({title, subTitle, children}) {
+function CourseItem({name, extra, id}) {
     return <Card mode="shadow" className={"course-item"}>
         <div className="course-item__text">
             <div className="course-item__title">
-                Название курса
+                { name }
             </div>
             <div className="course-item__sub">
-                Дополнительная информация
+                { extra }
             </div>
-            <Link to="/schedule/10">
+            <Link to={`/schedule/${id}`}>
                 <Button mode="secondary">Изменить</Button>
             </Link>
         </div>

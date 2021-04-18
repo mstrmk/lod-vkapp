@@ -27,10 +27,6 @@ export default (state = initialState, { type, payload }) => {
             };
 
         case USER_SET_ROLES:
-            console.log({
-                ...state,
-                roles: payload
-            });
             return {
                 ...state,
                 roles: payload

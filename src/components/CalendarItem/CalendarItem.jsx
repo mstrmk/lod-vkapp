@@ -1,10 +1,9 @@
 import './calendarItem.css';
 import React from "react";
-import {Card, Div} from "@vkontakte/vkui";
+import {Div} from "@vkontakte/vkui";
 
 
 function CalendarItem({title, subTitle, children}) {
-    console.log(children)
     return <div className={'calendar-item'}>
         <div className="calendar-title">
             <div className="calendar-title__main">{title}</div>

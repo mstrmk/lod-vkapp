@@ -4,13 +4,10 @@ import {
     Button, Caption, Card,
     Cell,
     Div,
-    Group, Headline,
-    Panel,
     PanelHeaderBack,
     ScreenSpinner,
     Spacing,
-    Switch, Text, Textarea, Title,
-    View
+    Switch, Text, Textarea, Title
 } from "@vkontakte/vkui";
 import {Icon24ChevronRight} from '@vkontakte/icons';
 import React, {useState} from "react";

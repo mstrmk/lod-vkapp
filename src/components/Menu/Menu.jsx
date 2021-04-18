@@ -1,8 +1,8 @@
 import './menu.css';
-import {Badge, Counter, Link, Tabbar, TabbarItem} from "@vkontakte/vkui";
-import {Icon28ClipOutline, Icon28MessageOutline, Icon28NewsfeedOutline} from "@vkontakte/icons";
+import {Tabbar, TabbarItem} from "@vkontakte/vkui";
+import {Icon28NewsfeedOutline} from "@vkontakte/icons";
 import React from "react";
-import {BrowserRouter as Router, useLocation, useHistory } from "react-router-dom";
+import {useLocation, useHistory } from "react-router-dom";
 
 const menuConfig = [
     {
@@ -31,8 +31,8 @@ function Menu() {
     }
 
     return <Tabbar>
-        {menuConfig.map((item) => (
-            <TabbarItem text={item.title} selected={checkSelected(item.path)} onClick = {() => { history.push(item.path) }}>
+        {menuConfig.map((item, key) => (
+            <TabbarItem text={item.title} key={key} selected={checkSelected(item.path)} onClick = {() => { history.push(item.path) }}>
                 {item.icon}
             </TabbarItem>
         ))}
