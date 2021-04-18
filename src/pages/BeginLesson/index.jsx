@@ -219,7 +219,7 @@ const Pupil5 = ({setStep}) => {
 
 
 function BeginLesson({ teacher }) {
-    let [currentStep, setStep] = useState(STEPS.pupil1);
+    let [currentStep, setStep] = useState(STEPS.step1);
 
     return <>
         {currentStep === STEPS.step1 && <Step1 setStep={setStep} students={teacher.classItem.classStudents} />}
