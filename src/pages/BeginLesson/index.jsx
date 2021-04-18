@@ -62,6 +62,8 @@ const Step2 = ({setStep}) => {
 }
 
 const Pupil1 = ({setStep}) => {
+    let [emojiActive, setEmojiActive] = useState();
+
     return <Layout title="Оцените ученика" backButton={() => {
     }}>
         <Cell before={<Avatar
@@ -77,8 +79,9 @@ const Pupil1 = ({setStep}) => {
                 </Div>
             </Card>
             <Spacing size={34}/>
-            <EmojiRating onClickItem={(key) => {
-                setStep(STEPS.pupil2)
+            <EmojiRating active={emojiActive} onClickItem={(key) => {
+                setEmojiActive(key);
+                setTimeout(() => setStep(STEPS.pupil2), 400)
             }}/>
             <Spacing size={112}/>
             <div className={'text-center'}>
@@ -90,6 +93,8 @@ const Pupil1 = ({setStep}) => {
 
 
 const Pupil2 = ({setStep}) => {
+    let [emojiActive, setEmojiActive] = useState();
+
     return <Layout title="Оцените ученика" backButton={() => {
     }}>
         <Cell before={<Avatar
@@ -105,8 +110,9 @@ const Pupil2 = ({setStep}) => {
                 </Div>
             </Card>
             <Spacing size={34}/>
-            <EmojiRating onClickItem={(key) => {
-                setStep(STEPS.pupil3)
+            <EmojiRating active={emojiActive} onClickItem={(key) => {
+                setEmojiActive(key);
+                setTimeout(() => setStep(STEPS.pupil3), 400)
             }}/>
             <Spacing size={112}/>
             <div className={'text-center'}>
@@ -117,6 +123,8 @@ const Pupil2 = ({setStep}) => {
 }
 
 const Pupil3 = ({setStep}) => {
+    let [emojiActive, setEmojiActive] = useState();
+
     return <Layout title="Оцените ученика" backButton={() => {
     }}>
         <Cell before={<Avatar
@@ -132,8 +140,9 @@ const Pupil3 = ({setStep}) => {
                 </Div>
             </Card>
             <Spacing size={34}/>
-            <EmojiRating onClickItem={(key) => {
-                setStep(STEPS.pupil4)
+            <EmojiRating active={emojiActive} onClickItem={(key) => {
+                setEmojiActive(key);
+                setTimeout(() => setStep(STEPS.pupil4), 400)
             }}/>
             <Spacing size={112}/>
             <div className={'text-center'}>
@@ -161,10 +170,6 @@ const Pupil4 = ({setStep}) => {
                     <Textarea />
                 </Div>
             </Card>
-            <Spacing size={34}/>
-            <EmojiRating onClickItem={(key) => {
-                setStep(STEPS.pupil5)
-            }}/>
             <Spacing size={68}/>
             <div className={'text-center'}>
                 <Button size="l" after={<Icon24ChevronRight/>}>Сохранить оценку</Button>
@@ -214,7 +219,7 @@ const Pupil5 = ({setStep}) => {
 
 
 function BeginLesson({ teacher }) {
-    let [currentStep, setStep] = useState(STEPS.step1);
+    let [currentStep, setStep] = useState(STEPS.pupil1);
 
     return <>
         {currentStep === STEPS.step1 && <Step1 setStep={setStep} students={teacher.classItem.classStudents} />}
