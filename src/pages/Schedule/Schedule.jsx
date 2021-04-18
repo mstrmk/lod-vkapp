@@ -23,7 +23,6 @@ export default function Schedule() {
             </CalendarItem>
             <CalendarItem title="22 Апреля" subTitle="Понедельник">
                 <CourseItem />
-
             </CalendarItem>
         </Div>
     </Layout>;

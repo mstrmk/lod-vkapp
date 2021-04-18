@@ -1,6 +1,7 @@
 import React from "react";
 import {Button, Card} from "@vkontakte/vkui";
 import './course-item.css';
+import {Link} from "react-router-dom";
 
 
 function CourseItem({title, subTitle, children}) {
@@ -12,7 +13,9 @@ function CourseItem({title, subTitle, children}) {
             <div className="course-item__sub">
                 Дополнительная информация
             </div>
-            <Button mode="secondary">Изменить</Button>
+            <Link to="/schedule/10">
+                <Button mode="secondary">Изменить</Button>
+            </Link>
         </div>
         <div className="course-item__date-time">
             <div className="course-item__date">
