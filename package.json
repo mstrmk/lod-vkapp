@@ -11,10 +11,13 @@
     "@vkontakte/vk-miniapps-deploy": "0.0.17",
     "@vkontakte/vkjs": "^0.21.0",
     "@vkontakte/vkui": "^4.5.0",
+    "axios": "^0.21.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-redux": "^7.2.3",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
+    "redux-thunk": "^2.3.0",
     "web-vitals": "^1.1.1"
   },
   "scripts": {

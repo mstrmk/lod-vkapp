@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from 'react';
 import {
     AdaptivityProvider,
     ConfigProvider,
@@ -16,34 +16,45 @@ import Schedule from "./pages/Schedule/index";
 import LessonView from "./pages/LessonView";
 import BeginLesson from "./pages/BeginLesson";
 
+import store from './store';
+import { Provider } from 'react-redux';
+
+const Dev = React.lazy(() => import("./pages/Dev"));
+
 let App = ({viewWidth}) => {
     return (
-        <ConfigProvider platform = { Platform.IOS }>
-            <AdaptivityProvider>
-                <Epic>
-                    <AppRoot>
-                        <Router>
-                            <Switch>
-                                <Route path="/participants" exact={true}>
-                                    <Participants />
-                                </Route>
-                                <Route path="/schedule/:id" exact={true}>
-                                    <LessonView />
-                                </Route>
-                                <Route path="/schedule" exact={true}>
-                                    <Schedule />
-                                </Route>
-                                <Route path="/begin-lesson" exact={true}>
-                                    <BeginLesson />
-                                </Route>
-                            </Switch>
-                            <Menu />
-
-                        </Router>
-                    </AppRoot>
-                </Epic>
-            </AdaptivityProvider>
-        </ConfigProvider>
+        <Provider store={store}>
+            <ConfigProvider platform = { Platform.IOS }>
+                <AdaptivityProvider>
+                    <Epic>
+                        <AppRoot>
+                            <Router>
+                                <Suspense fallback={ 'fallback' }>
+                                    <Switch>
+                                        <Route path="/dev">
+                                            <Dev/>
+                                        </Route>
+                                        <Route path="/participants" exact={true}>
+                                            <Participants />
+                                        </Route>
+                                        <Route path="/schedule/:id" exact={true}>
+                                            <LessonView />
+                                        </Route>
+                                        <Route path="/schedule" exact={true}>
+                                            <Schedule />
+                                        </Route>
+                                        <Route path="/begin-lesson" exact={true}>
+                                            <BeginLesson />
+                                        </Route>
+                                    </Switch>
+                                    <Menu />
+                                </Suspense>
+                            </Router>
+                        </AppRoot>
+                    </Epic>
+                </AdaptivityProvider>
+            </ConfigProvider>
+        </Provider>
     );
 };
 
